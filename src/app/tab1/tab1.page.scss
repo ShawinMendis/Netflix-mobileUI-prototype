@@ -1,4 +1,27 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+ion-content {
+  --ion-background-color: #141414;
+
+  --ion-text-color: #ffffff;
+}
+
+.image-slider {
+  margin: 4px !important;
+}
+
+.banner-toolbar {
+  position: relative;
+  top: -50px;
+}
+.sliders {
+  position: relative;
+  top: -50px;
+}
+
+.ion-align-self-center {
+  align-self: center !important;
+}
+
+.availableClass {
+  background-color: white !important;
+  color: black !important;
 }
