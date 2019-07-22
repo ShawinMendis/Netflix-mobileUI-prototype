@@ -25,3 +25,22 @@ ion-content {
   background-color: white !important;
   color: black !important;
 }
+.logo {
+  height: 40px !important;
+  width: 40px;
+}
+ion-toolbar {
+  --background: transparent !important;
+  // --ion-color-base: transparent !important;
+}
+
+.bannerElement {
+  position: relative;
+}
+.toolbarTop {
+  position: absolute;
+  top: 15px;
+}
+.playButton {
+  text-align: center !important;
+}

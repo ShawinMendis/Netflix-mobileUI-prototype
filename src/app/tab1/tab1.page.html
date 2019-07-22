@@ -1,7 +1,23 @@
-<ion-header translucent="true"> </ion-header>
-
 <ion-content fullscreen="true">
-  <div class="banner">
+  <div class="bannerElement">
+    <div class="toolbarTop">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button>
+            <img class="logo" src="assets/logo.png" />
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons>
+          <ion-button>
+            TV shows
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>My list</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </div>
+
     <ion-slides
       [options]="BannerSlideOptions"
       #slider
@@ -11,31 +27,33 @@
         <ion-img [src]="slide.src"></ion-img>
       </ion-slide>
     </ion-slides>
+
     <!-- <ion-img src="./assets/net3.jpg"></ion-img> -->
-  </div>
-  <div class="banner-toolbar">
-    <ion-toolbar color="translucent">
-      <ion-buttons slot="start">
-        <ion-button>
-          <ion-icon slot="icon-only" name="add"></ion-icon>
-        </ion-button>
-      </ion-buttons>
 
-      <ion-title>
-        <ion-button color="warning" size="small"
-          ><ion-icon name="play"> </ion-icon>Play</ion-button
-        >
-      </ion-title>
+    <div class="banner-toolbar">
+      <ion-toolbar color="translucent" mode="ios">
+        <ion-buttons slot="start">
+          <ion-button>
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </ion-buttons>
 
-      <ion-buttons slot="end">
-        <ion-button>
-          <ion-icon
-            slot="icon-only"
-            name="information-circle-outline"
-          ></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
+        <ion-title>
+          <ion-button color="warning" size="small"
+            ><ion-icon name="play"> </ion-icon>Play</ion-button
+          >
+        </ion-title>
+
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon
+              slot="icon-only"
+              name="information-circle-outline"
+            ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </div>
   </div>
 
   <div class="sliders">
@@ -49,11 +67,11 @@
           <ion-img [src]="item.src" class="image-slider"></ion-img>
         </ion-slide>
 
-        <ion-slide class="ion-align-self-center">
+        <!-- <ion-slide class="ion-align-self-center">
           <ion-button fill="clear">
             <ion-icon name="arrow-round-forward"></ion-icon>
           </ion-button>
-        </ion-slide>
+        </ion-slide> -->
       </ion-slides>
 
       <ion-item lines="none">
@@ -65,11 +83,11 @@
           <ion-img [src]="item.src" class="image-slider"></ion-img>
         </ion-slide>
 
-        <ion-slide class="ion-align-self-center">
+        <!-- <ion-slide class="ion-align-self-center">
           <ion-button fill="clear">
             <ion-icon name="arrow-round-forward"></ion-icon>
           </ion-button>
-        </ion-slide>
+        </ion-slide> -->
       </ion-slides>
 
       <ion-item lines="none">
@@ -113,16 +131,16 @@
           <ion-img [src]="item.src" class="image-slider"></ion-img>
         </ion-slide>
 
-        <ion-slide class="ion-align-self-center">
+        <!-- <ion-slide class="ion-align-self-center">
           <ion-button fill="clear">
             <ion-icon name="arrow-round-forward"></ion-icon>
           </ion-button>
-        </ion-slide>
+        </ion-slide> -->
       </ion-slides>
 
-      <ion-item lines="none">
+      <!-- <ion-item lines="none">
         <p slot="start">My List</p>
-      </ion-item>
+      </ion-item> -->
     </ion-list>
   </div>
 </ion-content>

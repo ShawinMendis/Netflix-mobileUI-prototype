@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { IonSlides } from "@ionic/angular";
+import { MoviesService, SearchType } from "../services/movies.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-tab1",
@@ -7,6 +9,10 @@ import { IonSlides } from "@ionic/angular";
   styleUrls: ["tab1.page.scss"]
 })
 export class Tab1Page {
+  searchTerm = "";
+
+  movies: Observable<any>;
+
   items = [
     {
       src: "assets/net2.jpg",
@@ -28,6 +34,10 @@ export class Tab1Page {
     {
       src: "assets/banner1.jpg",
       name: "Pinacle"
+    },
+    {
+      src: "assets/net1.jpg",
+      name: "Pinacle"
     }
   ];
 
@@ -40,7 +50,8 @@ export class Tab1Page {
   BannerSlideOptions = {
     initialSlide: 0,
     slidesPerView: 1,
-    speed: 500
+    speed: 800,
+    preloadImages: true
   };
 
   slides = [
@@ -48,17 +59,19 @@ export class Tab1Page {
       src: "assets/net3.jpg"
     },
     {
-      src: "assets/net4.jpg"
+      src: "assets/net5.jpg"
     }
   ];
 
-  constructor() {}
+  type: SearchType = SearchType.movie;
+
+  constructor(private movieservice: MoviesService) {}
 
   playSelected() {
     console.log("press clicked");
   }
 
   slidesDidLoad(slides: IonSlides) {
-    slides.startAutoplay();
+    // slides.startAutoplay();
   }
 }
