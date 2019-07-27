@@ -4,15 +4,7 @@ ion-content {
   --ion-text-color: #ffffff;
 }
 
-.image-slider {
-  margin: 4px !important;
-}
-
 .banner-toolbar {
-  position: relative;
-  top: -50px;
-}
-.sliders {
   position: relative;
   top: -50px;
 }
@@ -21,26 +13,7 @@ ion-content {
   align-self: center !important;
 }
 
-.availableClass {
-  background-color: white !important;
-  color: black !important;
-}
-.logo {
-  height: 40px !important;
-  width: 40px;
-}
-ion-toolbar {
-  --background: transparent !important;
-  // --ion-color-base: transparent !important;
-}
-
-.bannerElement {
-  position: relative;
-}
-.toolbarTop {
+.navbar {
   position: absolute;
-  top: 15px;
-}
-.playButton {
-  text-align: center !important;
+  top: 20px;
 }

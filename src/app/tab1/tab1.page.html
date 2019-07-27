@@ -1,146 +1,37 @@
 <ion-content fullscreen="true">
-  <div class="bannerElement">
-    <div class="toolbarTop">
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button>
-            <img class="logo" src="assets/logo.png" />
-          </ion-button>
-        </ion-buttons>
-        <ion-buttons>
-          <ion-button>
-            TV shows
-          </ion-button>
-        </ion-buttons>
-        <ion-buttons slot="end">
-          <ion-button>My list</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </div>
-
-    <ion-slides
-      [options]="BannerSlideOptions"
-      #slider
-      (ionSlidesDidLoad)="slidesDidLoad(slider)"
-    >
-      <ion-slide *ngFor="let slide of slides">
-        <ion-img [src]="slide.src"></ion-img>
-      </ion-slide>
-    </ion-slides>
-
-    <!-- <ion-img src="./assets/net3.jpg"></ion-img> -->
-
-    <div class="banner-toolbar">
-      <ion-toolbar color="translucent" mode="ios">
-        <ion-buttons slot="start">
-          <ion-button>
-            <ion-icon slot="icon-only" name="add"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-
-        <ion-title>
-          <ion-button color="warning" size="small"
-            ><ion-icon name="play"> </ion-icon>Play</ion-button
-          >
-        </ion-title>
-
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon
-              slot="icon-only"
-              name="information-circle-outline"
-            ></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </div>
+  <div class="navbar">
+    <app-navbar></app-navbar>
   </div>
 
-  <div class="sliders">
-    <ion-list>
-      <ion-item lines="none">
-        <p slot="start">Recently added</p>
-      </ion-item>
+  <app-banner></app-banner>
 
-      <ion-slides [options]="slideOpts">
-        <ion-slide *ngFor="let item of items" (click)="playSelected()">
-          <ion-img [src]="item.src" class="image-slider"></ion-img>
-        </ion-slide>
-
-        <!-- <ion-slide class="ion-align-self-center">
-          <ion-button fill="clear">
-            <ion-icon name="arrow-round-forward"></ion-icon>
-          </ion-button>
-        </ion-slide> -->
-      </ion-slides>
-
-      <ion-item lines="none">
-        <p slot="start">Trending now</p>
-      </ion-item>
-
-      <ion-slides [options]="slideOpts">
-        <ion-slide *ngFor="let item of items">
-          <ion-img [src]="item.src" class="image-slider"></ion-img>
-        </ion-slide>
-
-        <!-- <ion-slide class="ion-align-self-center">
-          <ion-button fill="clear">
-            <ion-icon name="arrow-round-forward"></ion-icon>
-          </ion-button>
-        </ion-slide> -->
-      </ion-slides>
-
-      <ion-item lines="none">
-        <p slot="start">Available now</p>
-      </ion-item>
-
-      <ion-card no-padding>
-        <ion-card-content>
-          <ion-img src="assets/availablebanner.jpg"></ion-img>
-        </ion-card-content>
-
-        <ion-grid>
-          <ion-row>
-            <ion-col size="6">
-              <ion-buttons>
-                <ion-button class="availableClass" expand="full">
-                  <ion-icon slot="start" name="play"></ion-icon>
-                  Play
-                </ion-button>
-              </ion-buttons>
-            </ion-col>
-            <ion-col size="6">
-              <ion-buttons>
-                <ion-button expand="full">
-                  <ion-icon name="add" slot="start"></ion-icon>
-                  My List
-                </ion-button>
-              </ion-buttons>
-            </ion-col>
-            <ion-buttons> </ion-buttons>
-          </ion-row>
-        </ion-grid>
-      </ion-card>
-
-      <ion-item lines="none">
-        <p slot="start">Exciting US TV Dramas</p>
-      </ion-item>
-
-      <ion-slides [options]="slideOpts">
-        <ion-slide *ngFor="let item of items">
-          <ion-img [src]="item.src" class="image-slider"></ion-img>
-        </ion-slide>
-
-        <!-- <ion-slide class="ion-align-self-center">
-          <ion-button fill="clear">
-            <ion-icon name="arrow-round-forward"></ion-icon>
-          </ion-button>
-        </ion-slide> -->
-      </ion-slides>
-
-      <!-- <ion-item lines="none">
-        <p slot="start">My List</p>
-      </ion-item> -->
-    </ion-list>
+  <div class="banner-toolbar">
+    <app-banner-toolbar></app-banner-toolbar>
   </div>
+
+  <ion-list>
+    <ion-item lines="none">
+      <p slot="start">Recently added</p>
+    </ion-item>
+
+    <app-slider></app-slider>
+
+    <ion-item lines="none">
+      <p slot="start">Trending now</p>
+    </ion-item>
+
+    <app-slider></app-slider>
+
+    <ion-item lines="none">
+      <p slot="start">Available now</p>
+    </ion-item>
+
+    <app-availablenow></app-availablenow>
+
+    <ion-item lines="none">
+      <p slot="start">Exciting US TV Dramas</p>
+    </ion-item>
+
+    <app-slider></app-slider>
+  </ion-list>
 </ion-content>

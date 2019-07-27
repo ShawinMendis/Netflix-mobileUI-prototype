@@ -1,0 +1,9 @@
+<ion-slides
+  [options]="BannerSlideOptions"
+  #slider
+  (ionSlidesDidLoad)="slidesDidLoad(slider)"
+>
+  <ion-slide *ngFor="let slide of slides">
+    <ion-img [src]="slide.src"></ion-img>
+  </ion-slide>
+</ion-slides>

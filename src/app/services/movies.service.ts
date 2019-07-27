@@ -28,7 +28,7 @@ export class MoviesService {
       )
       .pipe(
         map(results => {
-          console.log("RAW", results);
+          // console.log("RAW", results);
           return results["Search"];
         })
       );
