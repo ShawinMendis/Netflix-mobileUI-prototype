@@ -12,17 +12,11 @@ export class Tab2Page implements OnInit {
   searchTerm = "";
   type: SearchType = SearchType.all;
 
-  slideOpts = {
-    initialSlide: 0,
-    slidesPerView: 3.5,
-    speed: 400
-  };
-
   constructor(private movieservice: MoviesService) {}
 
   ngOnInit() {}
 
-  searchChnaged() {
+  searchChanged() {
     this.results = this.movieservice.searchData(this.searchTerm, this.type);
   }
 }

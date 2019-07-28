@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { MoviesService, SearchType } from "../services/movies.service";
 import { Observable } from "rxjs";
@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
   templateUrl: "tab1.page.html",
   styleUrls: ["tab1.page.scss"]
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   searchTerm = "";
 
   movies: Observable<any>;
@@ -16,4 +16,6 @@ export class Tab1Page {
   type: SearchType = SearchType.movie;
 
   constructor(private movieservice: MoviesService) {}
+
+  ngOnInit() {}
 }

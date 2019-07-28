@@ -1,48 +1,25 @@
-<ion-header translucent="true">
-  <ion-toolbar>
-    <ion-searchbar
-      animated="true"
-      class="searchbar"
-      [(ngModel)]="searchTerm"
-      (ionChange)="searchChnaged($event)"
-    ></ion-searchbar>
+<ion-toolbar color="dark" class="search-toolbar">
+  <ion-searchbar
+    animated="true"
+    class="searchbar"
+    [(ngModel)]="searchTerm"
+    (ionChange)="searchChanged($event)"
+  ></ion-searchbar>
 
-    <ion-item>
-      <ion-label>Search type</ion-label>
-      <ion-select [(ngModel)]="type" (ionChange)="searchChnaged($event)">
+  <ion-item lines="none">
+    <ion-label>Search type</ion-label>
+    <ion-select [(ngModel)]="type" (ionChange)="searchChanged($event)">
+      <div class="select-option">
         <ion-select-option value="">All</ion-select-option>
         <ion-select-option value="movie">Movies</ion-select-option>
         <ion-select-option value="series">Series</ion-select-option>
         <ion-select-option value="episode">Episode</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-toolbar>
-</ion-header>
+      </div>
+    </ion-select>
+  </ion-item>
+</ion-toolbar>
 
 <ion-content fullscreen="true">
-  <!-- <ion-list>
-    <ion-item *ngFor="let item of results | async">
-      <ion-avatar slot="start">
-        <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'" />
-      </ion-avatar>
-      <ion-label text-wrap>
-        <h3>{{ item.Title }}</h3>
-        {{ item.Year }}
-      </ion-label>
-      <ion-icon
-        slot="end"
-        *ngIf="item.Type == 'movie'"
-        name="videocam"
-      ></ion-icon>
-      <ion-icon slot="end" *ngIf="item.Type == 'series'" name="tv"></ion-icon>
-      <ion-icon
-        slot="end"
-        *ngIf="item.Type == 'game'"
-        name="logo-game-controller-b"
-      ></ion-icon>
-    </ion-item>
-  </ion-list> -->
-
   <ion-grid>
     <ion-row padding>
       <ion-col size="4" *ngFor="let item of results | async">
